@@ -1,7 +1,7 @@
 extends ParallaxBackground
 
 @onready var sky: Sprite2D = get_node("Sky/Background")
-const scroll_speed = 80
+const scroll_speed = 100
 func _ready() -> void:
 	randomize()
 	var index = randi_range(1, 2)
