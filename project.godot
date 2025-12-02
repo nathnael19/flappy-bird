@@ -13,3 +13,13 @@ config_version=5
 config/name="Flappy-bird"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=288
+window/size/viewport_height=512
+window/stretch/mode="canvas_items"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
