@@ -1,146 +1,66 @@
-[gd_scene load_steps=17 format=3 uid="uid://b6hn0lt16u10x"]
+[gd_scene load_steps=11 format=3 uid="uid://b6hn0lt16u10x"]
 
-[ext_resource type="Texture2D" uid="uid://busd4c1iqduf7" path="res://assets/Sprite/FlappyAsset/bluebird-downflap.png" id="1_gdhme"]
-[ext_resource type="Script" path="res://scene/Actor/player.gd" id="1_uco4t"]
-[ext_resource type="Texture2D" uid="uid://cr6tic3nawm0r" path="res://assets/Sprite/FlappyAsset/bluebird-midflap.png" id="2_owv5v"]
-[ext_resource type="Texture2D" uid="uid://b787i3jvie7gs" path="res://assets/Sprite/FlappyAsset/bluebird-upflap.png" id="3_wjubq"]
-[ext_resource type="Texture2D" uid="uid://p5lybi6cb5ey" path="res://assets/Sprite/FlappyAsset/redbird-downflap.png" id="4_2fbvw"]
-[ext_resource type="Texture2D" uid="uid://cavxa2r15c8go" path="res://assets/Sprite/FlappyAsset/redbird-midflap.png" id="5_vvmfi"]
-[ext_resource type="Texture2D" uid="uid://rphm0ypnmupy" path="res://assets/Sprite/FlappyAsset/redbird-upflap.png" id="6_esvrk"]
-[ext_resource type="Texture2D" uid="uid://cq8buc5xfw6fr" path="res://assets/Sprite/FlappyAsset/yellowbird-downflap.png" id="7_l4g6l"]
-[ext_resource type="Texture2D" uid="uid://benllp01gi4kw" path="res://assets/Sprite/FlappyAsset/yellowbird-midflap.png" id="8_6qcw7"]
-[ext_resource type="Texture2D" uid="uid://d1touklklrd77" path="res://assets/Sprite/FlappyAsset/yellowbird-upflap.png" id="9_qsax3"]
-[ext_resource type="AudioStream" uid="uid://dlgjg4s2bwtiu" path="res://assets/Music/wing.ogg" id="11_w0p5f"]
+[ext_resource type="Texture2D" uid="uid://jecxdjwwf06w" path="res://Assets/Sprite/bluebird-downflap.png" id="1_g0cew"]
+[ext_resource type="Texture2D" uid="uid://dkt5r2fwm5xrw" path="res://Assets/Sprite/bluebird-midflap.png" id="2_y4xqn"]
+[ext_resource type="Texture2D" uid="uid://bpthmoqde2rt8" path="res://Assets/Sprite/bluebird-upflap.png" id="3_v7dd8"]
+[ext_resource type="Texture2D" uid="uid://jgokwydquj2o" path="res://Assets/Sprite/redbird-downflap.png" id="4_cryew"]
+[ext_resource type="Texture2D" uid="uid://bv2cdq6vk3lvq" path="res://Assets/Sprite/redbird-midflap.png" id="5_h0iud"]
+[ext_resource type="Texture2D" uid="uid://nenq80tmm3xc" path="res://Assets/Sprite/redbird-upflap.png" id="6_2mxxs"]
+[ext_resource type="Texture2D" uid="uid://b7mjkono20373" path="res://Assets/Sprite/yellowbird-downflap.png" id="7_br01x"]
+[ext_resource type="Texture2D" uid="uid://q31jxmq0l6te" path="res://Assets/Sprite/yellowbird-midflap.png" id="8_4s3mu"]
+[ext_resource type="Texture2D" uid="uid://cc2flo4feehj6" path="res://Assets/Sprite/yellowbird-upflap.png" id="9_fuws1"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_t5qwn"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0sevg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_gdhme")
+"texture": ExtResource("1_g0cew")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_owv5v")
+"texture": ExtResource("2_y4xqn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_wjubq")
+"texture": ExtResource("3_v7dd8")
 }],
 "loop": true,
-"name": &"blue_flap",
-"speed": 3.0
+"name": &"blue",
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_2fbvw")
+"texture": ExtResource("4_cryew")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_vvmfi")
+"texture": ExtResource("5_h0iud")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_esvrk")
+"texture": ExtResource("6_2mxxs")
 }],
 "loop": true,
-"name": &"red_flap",
-"speed": 3.0
+"name": &"red",
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_l4g6l")
+"texture": ExtResource("7_br01x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_6qcw7")
+"texture": ExtResource("8_4s3mu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_qsax3")
+"texture": ExtResource("9_fuws1")
 }],
 "loop": true,
-"name": &"yellow_flap",
-"speed": 3.0
+"name": &"yellow",
+"speed": 4.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_e6vev"]
-radius = 12.0
-
-[sub_resource type="Animation" id="Animation_v2513"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_vkgqk"]
-resource_name = "get_ready"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -16)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape2D:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -16)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_s80p3"]
-_data = {
-"RESET": SubResource("Animation_v2513"),
-"get_ready": SubResource("Animation_vkgqk")
-}
-
 [node name="Player" type="Area2D"]
-visible = false
-script = ExtResource("1_uco4t")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_t5qwn")
-animation = &"blue_flap"
+sprite_frames = SubResource("SpriteFrames_0sevg")
+animation = &"blue"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_e6vev")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "get_ready"
-libraries = {
-"": SubResource("AnimationLibrary_s80p3")
-}
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("11_w0p5f")
-attenuation = 2.73208
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
